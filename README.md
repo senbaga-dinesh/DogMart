@@ -1,59 +1,48 @@
 # DogMart
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
+DogMart is a web application for purchasing dog care products. This is a single-page Angular application with client-side routing and authentication.
 
-## Development server
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Available Routes (Endpoints)](#available-routes-endpoints)
+- [Route Details](#route-details)
+- [Setup & Installation](#setup--installation)
+- [Authentication](#authentication)
+- [License](#license)
 
-To start a local development server, run:
+## Project Overview
+DogMart allows users to browse dog care products, register and log in, add items to a cart, and view their cart. Some routes are protected and require authentication.
 
-```bash
-ng serve
-```
+## Available Routes (Endpoints)
+| Path         | Component         | Protected | Description                      |
+|--------------|------------------|-----------|----------------------------------|
+| `/`          | HomeComponent     | No        | Home page, product overview      |
+| `/haircare`  | HaircareComponent | No        | Browse haircare products         |
+| `/login`     | LoginComponent    | No        | User login page                  |
+| `/register`  | RegisterComponent | No        | User registration page           |
+| `/cart`      | CartComponent     | Yes       | View cart (requires login)       |
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Route Details
+### `/` (Home)
+- Displays the main landing page and product overview.
 
-## Code scaffolding
+### `/haircare`
+- Shows a list of dog haircare products.
+- Allows adding products to the cart.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### `/login`
+- User login form.
+- Redirects to home on successful login.
 
-```bash
-ng generate component component-name
-```
+### `/register`
+- User registration form.
+- Redirects to login on successful registration.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### `/cart`
+- Displays the user's cart and total price.
+- Only accessible if the user is logged in (protected by AuthGuard).
+- Redirects to `/login` if not authenticated.
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Authentication
+- Authentication is handled client-side using localStorage.
+- The AuthGuard protects the `/cart` route and redirects unauthenticated users to `/login`.
