@@ -1,0 +1,76 @@
+<header class="navbar">
+    <button class="logo" [routerLink]="['/']">
+        DogMart 🐶
+      </button>
+      
+    <nav class="nav-links">
+      <div class="dropdown">
+        <button class="dropbtn" [routerLink]="'/haircare'">Haircare</button>
+        <div class="dropdown-content">
+            <a href="#">Shampoo</a>
+            <a href="#">Conditioner</a>
+            <a href="#">Hair Oil</a>
+            <a href="#">Dry Shampoo</a>
+            <a href="#">Hair Brush</a>
+            <a href="#">Hair Detangler</a>
+            <a href="#">Hair Gel</a>
+            <a href="#">Hair Serum</a>
+        </div>
+    </div>
+    
+    <div class="dropdown">
+      <button class="dropbtn">Hygienes</button>
+      <div class="dropdown-content">
+          <a href="#">Wipes</a>
+          <a href="#">Toothpaste</a>
+          <a href="#">Brush</a>
+          <a href="#">Nail Remover</a>
+          <a href="#">Deodorant</a>
+          <a href="#">Ear Cleaner</a>
+          <a href="#">Shampoo</a>
+          <a href="#">Grooming Scissors</a>
+      </div>
+  </div>
+  
+  <div class="dropdown">
+    <button class="dropbtn">Food</button>
+    <div class="dropdown-content">
+        <a href="#">Dry Food</a>
+        <a href="#">Wet Food</a>
+        <a href="#">Canned Food</a>
+        <a href="#">Raw Food</a>
+        <a href="#">Organic Food</a>
+    </div>
+</div>
+
+<div class="dropdown">
+    <button class="dropbtn">Accessories</button>
+    <div class="dropdown-content">
+        <a href="#">Collars</a>
+        <a href="#">Toys</a>
+        <a href="#">Leashes</a>
+        <a href="#">Beds</a>
+        <a href="#">Harnesses</a>
+        <a href="#">Bowls</a>
+    </div>
+</div>
+
+<div class="dropdown">
+    <button class="dropbtn">Medicines</button>
+    <div class="dropdown-content">
+        <a href="#">Vitamins</a>
+        <a href="#">Dewormers</a>
+        <a href="#">Flea Control</a>
+        <a href="#">Joint Supplements</a>
+        <a href="#">Antibiotics</a>
+    </div>
+</div>
+
+<div class="cart-inline">
+  <a href="#" (click)="onCartClick($event)">
+    <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Cart" />
+  </a>
+</div>
+
+    </nav>
+  </header>

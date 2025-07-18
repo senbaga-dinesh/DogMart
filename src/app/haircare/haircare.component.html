@@ -1,0 +1,22 @@
+<app-header></app-header> 
+
+<div class="product-container">
+    <div class="product-item" *ngFor="let product of products">
+      <img [src]="product.image" alt="{{ product.name }}" class="product-image" />
+      <h3>{{ product.name }}</h3>
+      <p class="price">${{ product.price.toFixed(2) }}</p>
+      <div class="quantity-controls">
+        <button (click)="decreaseQuantity(product)">-</button>
+        <span class="quantity">{{ product.quantity }}</span>
+        <button (click)="increaseQuantity(product)">+</button>
+      </div>
+      <p class="item-total" *ngIf="product.quantity > 0">
+        Total: ${{ getItemTotal(product).toFixed(2) }}
+      </p>
+    </div>
+</div>
+
+<div class="cart-actions" *ngIf="hasItemsInCart">
+    <button class="add-to-cart-btn" (click)="addAllToCart()">Add All to Cart</button>
+</div>
+  
